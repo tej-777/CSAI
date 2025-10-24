@@ -1,7 +1,7 @@
-from researchers.billingresearcher import handle_billing_query
-from researchers.techresearcher import handle_tech_query
-from researchers.productresearcher import handle_product_query
-from llms.topicclassifierllm import classify_topic
+from researchers.billing_researcher import handle_billing_query
+from researchers.tech_researcher import handle_tech_query
+from researchers.product_researcher import handle_product_query
+from llms.topic_classifier_llm import classify_topic
 
 def route_query(query):
     topic = classify_topic(query)
