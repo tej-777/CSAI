@@ -1,7 +1,7 @@
 from langgraph import Workflow, Node
-from agents.routeragent import route_query
-from agents.summarizeragent import summarize_output
-from agents.criticagent import provide_feedback
+from agents.router_agent import route_query
+from agents.summarizer_agent import summarize_output
+from agents.critic_agent import provide_feedback
 
 class CustomerSupportWorkflow(Workflow):
     def __init__(self):

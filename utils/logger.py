@@ -1,12 +1,13 @@
 import logging
 
-def setup_logger(name="supportai"):
+def setup_logger(name: str = "supportai", level: int = logging.INFO) -> logging.Logger:
     logger = logging.getLogger(name)
-    logger.setLevel(logging.INFO)
+    logger.setLevel(level)
     handler = logging.StreamHandler()
-    formatter = logging.Formatter('[%(asctime)s] %(levelname)s in %(module)s: %(message)s')
+    formatter = logging.Formatter('[%(asctime)s] %(levelname)s %(name)s in %(module)s: %(message)s')
     handler.setFormatter(formatter)
-    if not logger.hasHandlers():
+    # Avoid duplicate handlers in environments that reload modules
+    if not logger.handlers:
         logger.addHandler(handler)
     return logger
 

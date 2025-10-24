@@ -1,4 +1,4 @@
-from llms.intentanalyzerllm import analyze_intent
+from llms.intent_analyzer_llm import analyze_intent
 
 def summarize_output(routing_result):
     intent = analyze_intent(routing_result)
